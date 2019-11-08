@@ -2,12 +2,12 @@
 ## lesson 1-make kernel
 
 
-   #отредактировать Vagrantfile для работы VirtualBox Shared Folders
+   	#отредактировать Vagrantfile для работы VirtualBox Shared Folders
     MACHINES.each do |boxname, boxconfig|
     # Disable shared folders
     config.vm.synced_folder ".", "/vagrant", disabled: false
     
-	 ##обновил ядро до последней версии согласно методичке (ради эксперимента)
+	#обновил ядро до последней версии согласно методичке (ради эксперимента)
     ##Подключаем репозиторий, откуда возьмем необходимую версию ядра.
   	sudo yum install -y http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm
     ##Ставим последнее ядро:
@@ -19,7 +19,7 @@
     ##Перезагружаем виртуальную машину:
   	sudo reboot
 
-    ##скачал исходник ядра linux-5.2.21 
+    #скачал исходник ядра linux-5.2.21 
   	wget https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.2.21.tar.xz
     ##установил необхлдимые компоненты
   	yum install -y ncurses-devel make gcc bc bison flex elfutils-libelf-devel openssl-devel grub2
