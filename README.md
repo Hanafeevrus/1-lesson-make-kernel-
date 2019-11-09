@@ -6,6 +6,7 @@
     MACHINES.each do |boxname, boxconfig|
     # Disable shared folders
     config.vm.synced_folder ".", "/vagrant", disabled: false
+    
 	обновление ядра    
 	#обновил ядро до последней версии согласно методичке (ради эксперимента)
     ##Подключаем репозиторий, откуда возьмем необходимую версию ядра.
@@ -18,6 +19,7 @@
   	sudo grub2-set-default 0
     ##Перезагружаем виртуальную машину:
   	sudo reboot
+	
 	сборка ядр из исходника.
     #скачал исходник ядра linux-5.2.21 
   	wget https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.2.21.tar.xz
