@@ -1,13 +1,13 @@
 ## make-kernel		
 
 edit Vagrantfile for VirtualBox Shared Folders to work		
+```   
+MACHINES.each do |boxname, boxconfig|		
+#Disable shared folders		
+  config.vm.synced_folder ".", "/vagrant", disabled: false		
 ```    
-    MACHINES.each do |boxname, boxconfig|		
-      #Disable shared folders		
-          config.vm.synced_folder ".", "/vagrant", disabled: false		
-```    
-Kernel update				
-We connect the repository, where we get the necessary version of the kernel.		
+#### Kernel update		
+We connect the repository, where we get the necessary version of the kernel.	
 `sudo yum install -y http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm`		
 Put the last core version:		
 `sudo yum --enablerepo elrepo-kernel install kernel-ml -y`		
@@ -19,7 +19,8 @@ Reboot the virtual machine:
 `sudo reboot`		
 	
 #### assembly the kernel from the source.		
-downloaded the linux-5.2.21 kernel source 		
+
+downloaded the linux-5.2.21 kernel source:		
 `wget https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.2.21.tar.xz`		
 installed the necessary components		
 `yum install -y ncurses-devel make gcc bc bison flex elfutils-libelf-devel openssl-devel grub2 perl`		
